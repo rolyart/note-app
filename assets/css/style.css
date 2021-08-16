@@ -1,0 +1,427 @@
+body {
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 56px;
+  padding-left: 64px;
+  min-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Track */
+  /* Handle */
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  padding: 0 16px;
+  border-bottom: 1px solid #DDDDDD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: auto;
+  background-color: white;
+  z-index: 10;
+}
+
+.app-header .app-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 16px;
+}
+
+.app-header .app-logo i {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.app-header .app-logo h2 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bolder;
+}
+
+.app-header .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app-header .search-bar button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  z-index: 2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.app-header .search-bar button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-header .search-bar input {
+  margin-left: -34px;
+  padding-left: 34px;
+  height: 34px;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: auto;
+  max-width: 120px;
+}
+
+.app-header .search-bar input:focus {
+  border-bottom: 1px solid #DDDDDD;
+  max-width: 160px;
+}
+
+.app-header .notes-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+}
+
+.app-header .notes-options button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  z-index: 2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.app-header .notes-options button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-aside {
+  border-right: 1px solid #DDDDDD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  height: calc(100% - 56px);
+  top: 57px;
+  left: 0;
+  background-color: #F1F1F1;
+  z-index: 1;
+  width: 64px;
+  padding: 16px 0;
+}
+
+.app-aside .colors {
+  height: calc(100% - 56px - 20px);
+  overflow-y: auto;
+  width: 100%;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 10px;
+}
+
+.app-aside .colors button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 auto 10px auto;
+  display: block;
+  cursor: pointer;
+}
+
+.app-aside .colors button.selected-color {
+  -webkit-animation: scaleOut .6s ease;
+          animation: scaleOut .6s ease;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.app-aside .btn-import {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  display: block;
+  line-height: 34px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.add-note {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1em;
+  -webkit-animation: scaleUp .4s ease-in-out;
+          animation: scaleUp .4s ease-in-out;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-note header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.add-note header button {
+  margin-left: auto;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.add-note h3 {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.add-note textarea {
+  font-family: 'PT Sans', sans-serif;
+  min-width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 16px 0 16px;
+  height: auto;
+  background-color: transparent;
+  margin: 0 0 10px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.add-note textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.add-note textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.add-note textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.add-note textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.add-note .btn-cancel:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.add-note .btn-cancel:focus {
+  -webkit-animation: scaleUp .3s ease;
+          animation: scaleUp .3s ease;
+}
+
+.notes {
+  -webkit-column-width: 20em;
+          column-width: 20em;
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Handle on hover */
+}
+
+.notes .note {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.notes .note p {
+  padding: 0 16px;
+  font-size: 18px;
+}
+
+.notes .note .note-footer {
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
+          box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.notes .note .note-footer time {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.notes .note .note-footer button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  z-index: 2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.notes .note .note-footer button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.notes .note:last-child {
+  margin-bottom: 0;
+}
+
+.notes::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.notes .notice {
+  border-radius: 10px;
+  background-color: #F8D7D9;
+  padding: 16px;
+  color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+@-webkit-keyframes scaleUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  85% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  85% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleOut {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  85% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  85% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes ripple {
+  from {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  from {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */

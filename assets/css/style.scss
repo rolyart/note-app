@@ -1,0 +1,303 @@
+body{
+    margin:0;
+    font-family: 'PT Sans', sans-serif;
+    display:flex;
+    padding-top:56px;
+    padding-left:64px;
+    min-height:100vh;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+      
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f0f0f0; 
+    }
+       
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: black; 
+    }
+}
+
+.app-header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:56px;
+    padding:0 16px;
+    border-bottom:1px solid #DDDDDD;
+    display:flex;
+    align-items: center;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 10;
+    .app-logo{
+        display:flex;
+        align-items: center;
+        margin-right:16px;
+        i{
+            font-size:20px;
+            margin-right:8px;
+        }
+        h2{
+            font-size:18px;
+            margin:0;
+            font-weight: bolder;
+        }
+    }
+    .search-bar{
+        display:flex;
+        button{
+            width:34px;
+            height:34px;
+            border-radius:50%;
+            border:none;
+            z-index:2;
+            background-color: transparent;
+            cursor:pointer;
+            &:focus{
+                background-color: rgba(black, .1);
+            }
+        }
+        input{
+            margin-left:-34px;
+            padding-left:34px;
+            height:34px;
+            border:none;
+            outline:none;
+            box-sizing: border-box;
+            width:auto;
+            max-width:120px;;
+            &:focus{
+                border-bottom:1px solid #DDDDDD;
+                max-width:160px;
+            }
+        }
+    }
+    .notes-options{
+        display:flex;
+        margin-left:auto;
+        button{
+            width:34px;
+            height:34px;
+            border-radius:50%;
+            border:none;
+            z-index:2;
+            background-color: transparent;
+            cursor:pointer;
+            &:focus{
+                background-color: rgba(black, .1);
+            }
+        }
+    }
+}
+
+.app-aside{
+    border-right:1px solid #DDDDDD;
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    position:fixed;
+    height:calc(100% - 56px);
+    top:57px;
+    left:0;
+    background-color: #F1F1F1;
+    z-index:1;
+    width:64px;
+    padding:16px 0;
+    .colors{
+        height:calc(100% - 56px - 20px);
+        overflow-y: auto;
+        width:100%;
+        border-bottom:1px solid #DDDDDD;
+        margin-bottom:10px;
+        button{
+            width:24px;
+            height:24px;
+            border-radius:50%;  
+            border:none;
+            margin:0 auto 10px auto;
+            display:block;
+            cursor:pointer;
+            &.selected-color{
+                animation:scaleOut .6s ease;
+                border:2px solid rgba(black, .2);
+            }
+        }
+    }
+    .btn-import{
+        width:34px;
+        height:34px;
+        margin:0 auto;
+        display:block;
+        line-height: 34px;
+        text-align: center;
+        font-size:18px;
+    }
+
+}
+
+.add-note{
+    position:relative;
+    display: inline-block;
+	width:  100%; 
+    margin-bottom:1em;
+    animation: scaleUp .4s ease-in-out;
+    border-radius:10px;
+    margin-bottom:16px;
+    overflow:hidden;
+    border:1px solid rgba(black, .1);
+   header{
+        display:flex;
+        align-items: center;
+        padding:5px 10px;
+        border-bottom:1px solid rgba(black, .4);
+        box-shadow: 0 1px 0 rgba(white, .3);
+        button{
+            margin-left:auto;
+            width:34px;
+            height:34px;
+            padding:0;
+            border:none;
+            outline: none;
+            background-color: transparent;
+            font-size:14px;
+        }
+    }
+    h3{
+        margin:0;
+        color:rgba(black, .7);
+    }
+    
+    textarea{
+        font-family: 'PT Sans', sans-serif;
+        min-width:100%;
+        border:none;
+        outline:none;
+        padding:10px 16px 0 16px;
+        height:auto;
+        background-color: transparent;
+        margin:0 0 10px 0;
+        box-sizing: border-box;
+        overflow:hidden;
+        font-size:16px;
+        color:rgba(black, .7);
+        &::placeholder{
+            color:rgba(black, .5);
+        }
+    }
+    .btn-cancel{
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:focus{
+            animation:scaleUp .3s ease;
+        }
+    }
+}
+
+.notes{
+    column-width: 20em;
+	column-gap: 1em;
+    box-sizing: border-box;
+    padding:1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .note{
+        display: inline-block;
+        width:  100%; 
+        margin-bottom:1em;
+        box-sizing: border-box;
+        border-radius:10px;
+        border:1px solid rgba(black, .1);
+        p{
+            padding:0 16px;
+            font-size:18px;
+        }
+       .note-footer{
+           padding:0 16px;
+           display:flex;
+           align-items: center;
+           border-top:1px solid rgba(black, .3);
+           box-shadow: 0 -1px 0 rgba(white, .2);
+           time{
+               flex:1 1 auto;
+               margin:0;
+               font-weight: lighter;
+               font-size:14px;
+           }
+           button{
+            width:34px;
+            height:34px;
+            border-radius:50%;
+            border:none;
+            z-index:2;
+            background-color: transparent;
+            cursor:pointer;
+            &:focus{
+                background-color: rgba(black, .1);
+            }
+        }
+       }
+    
+       &:last-child{
+           margin-bottom:0;
+       }
+    }
+    
+      
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+    .notice{
+        border-radius:10px;
+        background-color: #F8D7D9;
+        padding:16px;
+        color:rgba(black, .9);
+        border:1px solid rgba(black, .3);
+    }
+   
+}
+
+
+@keyframes scaleUp {
+    from{ opacity: 0; transform:scale(0)}
+
+    85%{
+        transform: scale(1.1);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes scaleOut {
+    from{
+        transform: scale(0);
+    }
+    85%{
+        transform:scale(1.2)
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes ripple{
+    from{
+        transform: scale(.1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
