@@ -321,6 +321,15 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.notes .note.update {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .notes .note h1 {
@@ -338,6 +347,18 @@ body::-webkit-scrollbar-thumb {
   text-transform: capitalize;
 }
 
+.notes .note h1 input {
+  margin: 0;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: transparent;
+}
+
 .notes .note p {
   padding: 10px 16px;
   margin: 0;
@@ -347,24 +368,8 @@ body::-webkit-scrollbar-thumb {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.notes .note input {
-  margin: 0;
-  padding: 10px 16px;
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  font-size: 20px;
+.notes .note p textarea {
   outline: none;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.1);
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.notes .note textarea {
-  outline: none;
-  padding: 10px 16px;
   font-size: 16px;
   background-color: transparent;
   font-family: inherit;
