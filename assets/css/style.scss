@@ -1,3 +1,19 @@
+:root {
+    --blue: #0d6efd;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #d63384;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #198754;
+    --teal: #20c997;
+    --cyan: #0dcaf0;
+    --black: #000;
+    --white: #fff;
+}
+
+
 body{
     margin:0;
     font-family: 'PT Sans', sans-serif;
@@ -38,12 +54,12 @@ body{
         display:flex;
         align-items: center;
         margin-right:16px;
-        i{
+        svg{
             font-size:20px;
             margin-right:8px;
         }
         h2{
-            font-size:18px;
+            font-size:20px;
             margin:0;
             font-weight: bolder;
         }
@@ -65,15 +81,15 @@ body{
         input{
             margin-left:-34px;
             padding-left:34px;
+            font-size:16px;
             height:34px;
             border:none;
             outline:none;
             box-sizing: border-box;
-            width:auto;
-            max-width:120px;;
+            width:34px;
+            max-width:160px;
             &:focus{
-                border-bottom:1px solid #DDDDDD;
-                max-width:160px;
+                width:auto;
             }
         }
     }
@@ -90,6 +106,12 @@ body{
             cursor:pointer;
             &:focus{
                 background-color: rgba(black, .1);
+            }
+            &.btn-delete{
+                color:var(--red);
+            }
+            &.btn-download{
+                color:var(--indigo);
             }
         }
     }
@@ -156,6 +178,19 @@ body{
         padding:5px 10px;
         border-bottom:1px solid rgba(black, .4);
         box-shadow: 0 1px 0 rgba(white, .3);
+        background-color: rgba(black, .1);
+        .note-title{
+            border:none;
+            background-color: transparent;
+            height:34px;
+            outline:none;
+            color:black;
+            font-size:18px;
+            font-weight: bold;
+            &:focus{
+
+            }
+        }
         button{
             margin-left:auto;
             width:34px;
@@ -213,16 +248,54 @@ body{
         box-sizing: border-box;
         border-radius:10px;
         border:1px solid rgba(black, .1);
+        overflow: hidden;
+        box-shadow: 0 3px 5px rgba(black, .2);
+        h1{
+            padding:10px 16px;
+            margin:0;
+            font-size:20px;
+            border-bottom:1px solid rgba(black, .1);
+            box-shadow: 0 1px 0 rgba(white, .3);
+            background-color: rgba(black, .05);
+            box-sizing: border-box;
+            color:rgba(black, .8);
+            font-weight: 400;
+            text-transform: capitalize;
+        }
         p{
-            padding:0 16px;
-            font-size:18px;
+            padding:10px 16px;
+            margin:0;
+            border-bottom:1px solid rgba(black, .1);
+            box-shadow: 0 1px 0 rgba(white, .3);
+            color:rgba(black, .6);
+        }
+        input{
+            margin:0;
+            padding:10px 16px;
+            box-shadow: 0 1px 0 rgba(white, .2);
+            font-size:20px;
+            outline:none;
+            border:none;
+            background-color: rgba(black, .1);
+            width:100%;
+            box-sizing: border-box;
+            border-bottom:1px solid rgba(black, .3);
+        }
+        textarea{
+            outline:none;
+            padding:10px 16px;
+            font-size:16px;
+            background-color: transparent;
+            font-family: inherit;
+            width:100%;
+            box-sizing: border-box;
+            border:none;
         }
        .note-footer{
            padding:0 16px;
            display:flex;
            align-items: center;
-           border-top:1px solid rgba(black, .3);
-           box-shadow: 0 -1px 0 rgba(white, .2);
+           background-color: rgba(black, .02);
            time{
                flex:1 1 auto;
                margin:0;
@@ -230,8 +303,8 @@ body{
                font-size:14px;
            }
            button{
-            width:34px;
-            height:34px;
+            width:38px;
+            height:38px;
             border-radius:50%;
             border:none;
             z-index:2;
